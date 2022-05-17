@@ -1,0 +1,85 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Filter by</h5>
+                  <br>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="fieldCheck1">
+                    <label class="form-check-label" for="fieldCheck1">
+                        Huile d’olive 
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="fieldCheck2">
+                    <label class="form-check-label" for="fieldCheck2">
+                        Dattes de Tunisie
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="fieldCheck3">
+                    <label class="form-check-label" for="fieldCheck3">
+                        Miel bio 
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="fieldCheck4">
+                    <label class="form-check-label" for="fieldCheck4">
+                        Pâtisseries tunisiennes 
+                    </label>
+                  </div>
+                 
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Shop by price</h5>
+                  <br>
+                  <div>
+                    <label for="priceRange1" class="form-label">Prix</label>
+                    <input type="range" class="form-range" id="priceRange1">
+                  </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Conditions</h5>
+                    <br>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="conditionCheck1">
+                      <label class="form-check-label" for="conditionCheck1">
+                        New products 
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="conditionCheck2">
+                      <label class="form-check-label" for="conditionCheck2">
+                        Best sales 
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="conditionCheck3">
+                      <label class="form-check-label" for="conditionCheck3">
+                        Prices drop  
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="conditionCheck4">
+                      <label class="form-check-label" for="conditionCheck4">
+                        In Stock  
+                      </label>
+                    </div>
+                   
+                  </div>
+            </div>
+        </div>
+        <div class="col">
+            <h4>Produits</h4>
+            <br>
+            <div class="card-group">
+                <app-product *ngFor="let product of products" [product]="product"></app-product>
+            </div>
+        </div>
+    </div>
+</div>
