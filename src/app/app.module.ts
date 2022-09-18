@@ -9,6 +9,9 @@ import { ProductsComponent } from './components/products/products.component';
 import { ProductComponent } from './components/product/product.component';
 import { HomeComponent } from './components/home/home.component';
 import { ShopingCartComponent } from './components/shoping-cart/shoping-cart.component';
+import { LoginComponent } from './components/login/login.component';
+import { SignupComponent } from './components/signup/signup.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,11 +21,14 @@ import { ShopingCartComponent } from './components/shoping-cart/shoping-cart.com
     ProductsComponent,
     ProductComponent,
     HomeComponent,
-    ShopingCartComponent
+    ShopingCartComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
