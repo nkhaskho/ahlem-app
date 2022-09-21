@@ -12,6 +12,8 @@ import { ShopingCartComponent } from './components/shoping-cart/shoping-cart.com
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule } from '@angular/forms';
+import { AdsBannerComponent } from './components/ads-banner/ads-banner.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     ShopingCartComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    AdsBannerComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,

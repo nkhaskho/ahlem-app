@@ -1,2 +1,14 @@
 <img src="assets/images/slide-01.jpg" alt="">
+<div class="row">
+    <div class="col col-md-8 offset-md-3">
+        <br>
+        <div class="card-group">
+            <app-product class="my-card" *ngFor="let product of products" [product]="product"></app-product>
+        </div>
+    </div>
+</div>
+<br>
+<div class="row">
+    <app-ads-banner></app-ads-banner>
+</div>
 <br>

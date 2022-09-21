@@ -27,6 +27,27 @@ export class ProductService {
       price: 16.84,
       image: "product-10.jpg",
       stars: 5
+    },
+    {
+      id: 3,
+      name: "Product 3",
+      price: 16.84,
+      image: "product-10.jpg",
+      stars: 5
+    },
+    {
+      id: 3,
+      name: "Product 3",
+      price: 16.84,
+      image: "product-10.jpg",
+      stars: 5
+    },
+    {
+      id: 3,
+      name: "Product 3",
+      price: 16.84,
+      image: "product-10.jpg",
+      stars: 5
     }
   ];
 
