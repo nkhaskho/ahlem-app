@@ -3,7 +3,7 @@
     <div class="col col-md-8 offset-md-3">
         <br>
         <div class="card-group">
-            <app-product class="my-card" *ngFor="let product of products" [product]="product"></app-product>
+            <app-product class="my-card" *ngFor="let product of products.slice(0,3)" [product]="product"></app-product>
         </div>
     </div>
 </div>
@@ -12,3 +12,10 @@
     <app-ads-banner></app-ads-banner>
 </div>
 <br>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let blog of blogs" class="col col-md-4">
+            <app-blog [blog]="blog"></app-blog>
+        </div>
+    </div>
+</div>

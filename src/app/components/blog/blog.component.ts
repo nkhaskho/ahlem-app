@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Blog } from './../../models/blog';
+import { Component, Input, OnInit } from '@angular/core';
+import { BlogService } from 'src/app/services/blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogComponent implements OnInit {
 
+  @Input()
+  blog: Blog = new Blog();
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }
