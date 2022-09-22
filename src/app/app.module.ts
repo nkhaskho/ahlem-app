@@ -1,3 +1,4 @@
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,6 +15,9 @@ import { SignupComponent } from './components/signup/signup.component';
 import { FormsModule } from '@angular/forms';
 import { AdsBannerComponent } from './components/ads-banner/ads-banner.component';
 import { BlogComponent } from './components/blog/blog.component';
+import { InsightsComponent } from './components/dashboard/insights/insights.component';
+import { OrdersComponent } from './components/dashboard/orders/orders.component';
+import { PromotionsComponent } from './components/dashboard/promotions/promotions.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { BlogComponent } from './components/blog/blog.component';
     LoginComponent,
     SignupComponent,
     AdsBannerComponent,
-    BlogComponent
+    BlogComponent,
+    DashboardComponent,
+    InsightsComponent,
+    OrdersComponent,
+    PromotionsComponent
   ],
   imports: [
     BrowserModule,

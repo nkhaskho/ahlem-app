@@ -1,0 +1,27 @@
+<div class="h4 card-sub-title">Orders</div>
+<br>
+<table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Client</th>
+        <th scope="col">Created at</th>
+        <th scope="col">#Articles</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let order of orders">
+        <th scope="row">{{order.id}}</th>
+        <td>{{order.client}}</td>
+        <td>{{order.createdAt | date}}</td>
+        <td>{{order.products.length+1}}</td>
+        <td>@{{order.status}}</td>
+        <td>
+            <img src="assets/images/eye.svg" class="icon" alt="">
+            <img src="assets/images/trash.svg" class="icon" alt="">
+        </td>
+      </tr>
+    </tbody>
+  </table>
