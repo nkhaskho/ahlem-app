@@ -1,3 +1,5 @@
+import { Product } from 'src/app/models/product';
+import { ProductService } from 'src/app/services/product/product.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PromotionsComponent implements OnInit {
 
-  constructor() { }
+  products: Product[] = [];
+
+  constructor(private productService: ProductService) { }
 
   ngOnInit(): void {
+    
+  }
+
+  search() {
+    this.productService.findAll().toPromise()
+    .then(res => this.products = res)
+    .catch(err => console.log)
   }
 
 }
