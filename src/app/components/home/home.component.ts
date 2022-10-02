@@ -1,6 +1,6 @@
 import { BlogService } from 'src/app/services/blog.service';
 import { Blog } from './../../models/blog';
-import { ProductService } from './../../services/product.service';
+import { ProductService } from '../../services/product/product.service';
 import { Product } from './../../models/product';
 import { Component, OnInit } from '@angular/core';
 
@@ -18,7 +18,9 @@ export class HomeComponent implements OnInit {
               private blogService: BlogService) { }
 
   ngOnInit(): void {
-    this.products = this.productService.PRODUCTS;
+    this.productService.findAll().toPromise()
+    .then(res => this.products = res)
+    .catch(err => console.log)
     this.blogs = this.blogService.BLOGS;
   }
 
