@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth/auth.service';
 import { FormResponse } from './../../models/form-response';
 import { Component, OnInit } from '@angular/core';
 import { LoginForm } from 'src/app/models/login-form';
@@ -13,16 +14,19 @@ export class LoginComponent implements OnInit {
   loginForm = new LoginForm();
   formResponse = new FormResponse();
 
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private authService: AuthService) { }
 
   ngOnInit(): void {
   }
 
   login() {
-    if (this.loginForm.email == 'admin') {
-      localStorage.setItem('role', 'admin');
+    this.authService.authenticate(this.loginForm).toPromise()
+    .then(res => {
+      this.authService.saveLoggedUser(res);
       this.router.navigate(['dashboard'])
-    }
+    })
+    .catch(err => this.formResponse.setError(err.error))
   }
 
 }
