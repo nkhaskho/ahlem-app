@@ -1,3 +1,4 @@
+import { UserService } from './../../services/user/user.service';
 import { Component, OnInit } from '@angular/core';
 import { FormResponse } from 'src/app/models/form-response';
 import { User } from 'src/app/models/user';
@@ -12,11 +13,18 @@ export class SignupComponent implements OnInit {
   formResponse = new FormResponse();
   user = new User();
 
-  constructor() { }
+  constructor(private userService: UserService) { }
 
   ngOnInit(): void {
   }
 
-  signUp() {}
+  signUp() {
+    this.userService.addUser(this.user).toPromise()
+    .then(res => {
+      this.formResponse.setMessage(`Welcome ${this.user.username}, visit you email to check your login credentials.`)
+      this.user = new User();
+    })
+    .catch(err => this.formResponse.setError(err.error))
+  }
 
 }

@@ -1,8 +1,9 @@
 export class User {
-    id?: number = 0;
+    _id?: string = "";
     username: string = "";
     email: string = "";
     password: string = "";
-    role?: string = "";
+    role: string = "client";
+    fullName: string = "";
     phone: number = 0;
 }
