@@ -15,11 +15,20 @@ export class NavbarComponent implements OnInit {
               private authService: AuthService) { }
 
   ngOnInit(): void {
+    this.goHome()
   }
 
   signOut() {
     this.authService.signOut();
     this.router.navigate(['login'])
+  }
+
+  goHome() {
+    if (localStorage.getItem('role')=='admin') {
+      this.router.navigate(['dashboard'])
+    } else {
+      this.router.navigate(['/'])
+    }
   }
 
 }

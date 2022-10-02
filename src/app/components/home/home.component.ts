@@ -16,14 +16,9 @@ export class HomeComponent implements OnInit {
   blogs: Blog[] = [];
 
   constructor(private productService: ProductService,
-              private blogService: BlogService,
-              private router: Router) { }
+              private blogService: BlogService) { }
 
   ngOnInit(): void {
-    if (localStorage.getItem('role')=='admin') {
-      // navigate to dashboard
-      this.router.navigate(['dashboard'])
-    }
     this.productService.findAll().toPromise()
     .then(res => this.products = res)
     .catch(err => console.log)

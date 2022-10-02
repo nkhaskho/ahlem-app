@@ -24,9 +24,9 @@ export class LoginComponent implements OnInit {
     this.authService.authenticate(this.loginForm).toPromise()
     .then(res => {
       this.authService.saveLoggedUser(res);
-      this.router.navigate(['dashboard'])
+      this.router.navigate([''])
     })
-    .catch(err => this.formResponse.setError(err.error))
+    .catch(err => this.formResponse.setError(err))
   }
 
 }
