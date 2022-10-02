@@ -25,4 +25,8 @@ export class AuthService {
     localStorage.setItem('role', authResponse.role);
   }
 
+  signOut() {
+    localStorage.clear();
+  }
+
 }
