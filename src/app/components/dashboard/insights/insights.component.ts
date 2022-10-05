@@ -15,12 +15,12 @@ export class InsightsComponent implements OnInit {
   public ordersChart: any;
   stats = [
     {
-      name: 'Traffic',
+      name: 'Orders',
       value: 357451,
       percentage: 1,
     },
     {
-      name: 'New users',
+      name: 'Clients',
       value: 2514,
       percentage: -3.45,
     },
