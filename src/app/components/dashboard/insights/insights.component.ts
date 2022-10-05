@@ -11,7 +11,8 @@ Chart.register(...registerables)
 export class InsightsComponent implements OnInit {
 
 
-  public chart: any;
+  public salesChart: any;
+  public ordersChart: any;
   stats = [
     {
       name: 'Traffic',
@@ -38,11 +39,12 @@ export class InsightsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.createChart();
+    this.createOrdersChart();
+    this.createSalesChart();
   }
 
-  createChart(){
-    this.chart = new Chart("MyChart", {
+  createOrdersChart(){
+    this.ordersChart = new Chart("ordersChart", {
       type: 'doughnut', //this denotes tha type of chart
       data: {
         labels: [
@@ -51,7 +53,7 @@ export class InsightsComponent implements OnInit {
           'In progress'
         ],
         datasets: [{
-          label: 'My First Dataset',
+          label: 'Orders status',
           data: [300, 50, 100],
           backgroundColor: [
             'rgb(98, 241, 82)',
@@ -64,6 +66,23 @@ export class InsightsComponent implements OnInit {
       options: {
         aspectRatio:2.5
       }   
+    });
+  }
+
+  createSalesChart(){
+    this.salesChart = new Chart("salesChart", {
+      type: 'line', //this denotes tha type of chart
+      data: {
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul'],
+        datasets: [{
+          label: 'Sales tracking',
+          data: [65, 59, 80, 81, 56, 55, 40],
+          fill: false,
+          borderColor: 'rgb(75, 192, 192)',
+          tension: 0.1,
+          backgroundColor: 'rgba(0, 0, 0, 0.1)'
+        }]
+      }  
     });
   }
 
